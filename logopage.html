@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfocriK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+
+
+        }
+        h2{
+            position: relative;
+            font-size: 6em;
+            color: #222;
+
+        }
+        h2::before{
+            content: attr(data-text);
+            position: absolute;
+            color: #fff;
+            width: 200px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #fff;
+            animation: animate 8s linear infinite;
+            filter: drop-shadow(0 0 20px #979797) drop-shadow(0 0 50px #979797);
+        }
+        @keyframes animate{
+            0%,10%,100%{
+                width: 0;
+            }
+
+            70%,90%{
+                width: 100%;
+            }
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            position: relative;
+            display: block;
+            color: rgb(255, 255, 255);
+            font-family: "Ubuntu", sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 30px 0;
+            margin-top: 200px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            padding: 14px;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 1s all ease;
+        }
+
+        .btn::before {
+            background: #b1b1b1;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: all 0.6s ease;
+        }
+
+        .btn1::before {
+            width: 0%;
+            height: 100%;
+        }
+
+        .btn1:hover::before {
+            width: 100%;
+        }
+
+
+        @keyframes fadeAndScale {
+            0% {
+                opacity: 0;
+                transform: scale3d(.75, .75, 1);
+            }
+
+            70% {
+                opacity: 0;
+                transform: scale3d(.75, .75, 1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .btn {
+
+            animation: fadeAndScale 8s cubic-bezier(.39, -1.05, .58, 1.95);
+            animation-delay: -0.2s;
+            transform-origin: center bottom;
+        }
+    </style>
+</head>
+<body>
+    <h2 data-text = "&nbsp;INFOCRIK&nbsp;">&nbsp;INFOCRIK&nbsp;</h2>
+
+    <div class="middle">
+        <a href="index.html" target="_blank" class="btn btn1">Get started</a>
+    </div>
+</body>
+</html>
